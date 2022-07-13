@@ -1,7 +1,8 @@
 #/bin/bash
 
 # remote or local
-CONNECTION=remote
+# CONNECTION=remote
+CONNECTION=local
 
 # env options:
 MONTAGE_DIR=`realpath ../Montage`
@@ -103,7 +104,7 @@ end_memcached_remote() {
 }
 
 # traps to terminate background processes on sigint or error:
-trap end_memcached_${CONNECTION} INT TERM ERR
+trap "exit" INT TERM ERR
 trap end_memcached_${CONNECTION} EXIT
 
 # global prep:
