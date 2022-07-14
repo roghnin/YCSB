@@ -121,7 +121,7 @@ for MEMCACHED_OPTION in ${MEMCACHED_OPTIONS[@]}; do
     OUTPUT_FILE=$OUTPUT_DIR/$MEMCACHED_OPTION.txt
     prepare_memcached_$CONNECTION $MEMCACHED_OPTION
     cd $YCSB_DIR
-    for KV_OPTION in ${KV_OPTIONS[@]}; do
+    for KV_OPTION in "${KV_OPTIONS[@]}"; do
         echo "### KV option: $KV_OPTION" | tee -a $OUTPUT_FILE
         for CLIENT_COUNT in ${CLIENT_COUNTS[@]}; do
             start_memcached_$CONNECTION &
