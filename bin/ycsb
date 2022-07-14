@@ -21,6 +21,7 @@ import errno
 import fnmatch
 import io
 import os
+import re
 import shlex
 import sys
 import subprocess
@@ -314,7 +315,15 @@ def main():
         ycsb_command.append(command)
     print(" ".join(ycsb_command), file=sys.stderr)
     try:
-        return subprocess.call(ycsb_command)
+        # use subprocess.Popen() to get pid
+        java_subprocess = subprocess.Popen(ycsb_command)
+        # thread pinning
+        jstack_subprocess = subprocess.Popen(["jstack", "-l", str(java_subprocess.pid)], shell=True, stdout=subprocess.PIPE)
+        pids = map(lambda x: str(int(x[-6:], 0)),
+            re.findall('Memcached.*nid=0x.{4}', jstack_subprocess.communicate()[0]))
+        map(lambda x: subprocess.call(["taskset", "-p", x, "--cpu-list", "1-79:2"]), pids)
+        # end of thread pinning
+        return java_subprocess.wait()
     except OSError as e:
         if e.errno == errno.ENOENT:
             error('Command failed. Is java installed and on your PATH?')
