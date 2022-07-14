@@ -319,8 +319,10 @@ def main():
         java_subprocess = subprocess.Popen(ycsb_command)
         # thread pinning
         jstack_subprocess = subprocess.Popen(["jstack", "-l", str(java_subprocess.pid)], shell=True, stdout=subprocess.PIPE)
-        pids = map(lambda x: str(int(x[-6:], 0)),
-            re.findall('Memcached.*nid=0x.{4}', jstack_subprocess.communicate()[0]))
+        # pids = map(lambda x: str(int(x[-6:], 0)),
+        #     re.findall('Memcached.*nid=0x.{4}', jstack_subprocess.communicate()[0]))
+        pids = map(lambda x: str(int(x[4:10], 0)),
+            re.findall('nid=0x.{4} runnable', jstack_subprocess.communicate()[0]))
         map(lambda x: subprocess.call(["taskset", "-p", x, "--cpu-list", "1-79:2"]), pids)
         # end of thread pinning
         return java_subprocess.wait()
