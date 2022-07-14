@@ -105,7 +105,7 @@ end_memcached_remote() {
 
 # traps to terminate background processes on sigint or error:
 trap "exit" INT TERM ERR
-trap end_memcached_${CONNECTION} EXIT
+trap "end_memcached_${CONNECTION}; kill 0" EXIT
 
 # global prep:
 prepare_montage_$CONNECTION
