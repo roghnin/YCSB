@@ -4,9 +4,7 @@
 # CONNECTION=remote
 CONNECTION=local
 
-# env options:
-MONTAGE_DIR=`realpath ../Montage`
-MEMCACHED_DIR=`realpath ../Montage/ext/memcached`
+# test dimentions:
 MEMCACHED_OPTIONS=(
     "montage_dram_payloads"
     "montage_kv_store"
@@ -15,11 +13,19 @@ MEMCACHED_OPTIONS=(
     "montage_wb_cache"
     "master"
 )
-NVM_DIR="/mnt/pmem0"
-MEMCACHED_HOST_local="memcached.hosts=127.0.0.1"
 CLIENT_COUNTS=(8 16 24 32 40)
+KV_OPTIONS=(
+    "-p fieldcount=10 -p fieldlength=100"
+    "-p fieldcount=1 -p fieldlength=32"
+)
 RECORD_COUNT=10000000
 OP_COUNT=20000000
+
+# env options:
+MONTAGE_DIR=`realpath ../Montage`
+MEMCACHED_DIR=`realpath ../Montage/ext/memcached`
+NVM_DIR="/mnt/pmem0"
+MEMCACHED_HOST_local="memcached.hosts=127.0.0.1"
 
 # remote env options:
 REMOTE_SERVER="node2x20a"
@@ -28,7 +34,7 @@ REMOTE_MEMCACHED_DIR="$REMOTE_MONTAGE_DIR/ext/memcached"
 REMOTE_NVM_DIR="/mnt/pmem0"
 MEMCACHED_HOST_remote="memcached.hosts=node2x20a"
 
-# other envs:
+# generated envs:
 YCSB_DIR=`pwd`
 DATETIME=`date +"%m-%d-%y_%H-%M-%S"`
 OUTPUT_DIR="$YCSB_DIR/results/$DATETIME"
@@ -115,18 +121,21 @@ for MEMCACHED_OPTION in ${MEMCACHED_OPTIONS[@]}; do
     OUTPUT_FILE=$OUTPUT_DIR/$MEMCACHED_OPTION.txt
     prepare_memcached_$CONNECTION $MEMCACHED_OPTION
     cd $YCSB_DIR
-    for CLIENT_COUNT in ${CLIENT_COUNTS[@]}; do
-        start_memcached_$CONNECTION &
+    for KV_OPTION in ${KV_OPTIONS[@]}; do
+        echo "### KV option: $KV_OPTION" | tee -a $OUTPUT_FILE
+        for CLIENT_COUNT in ${CLIENT_COUNTS[@]}; do
+            start_memcached_$CONNECTION &
 
-        echo "## client cnt: $CLIENT_COUNT" | tee -a $OUTPUT_FILE
-        echo "# load data:" | tee -a $OUTPUT_FILE
-        $YCSB_DIR/bin/ycsb load memcached -s -P $YCSB_DIR/workloads/workloada -p $MEMCACHED_HOST -p recordcount=$RECORD_COUNT -p threadcount=$CLIENT_COUNT 2>&1 | tee -a $OUTPUT_FILE
-        echo "# YCSB-A:" | tee -a $OUTPUT_FILE
-        $YCSB_DIR/bin/ycsb run memcached -s -P $YCSB_DIR/workloads/workloada -p $MEMCACHED_HOST -p operationcount=$OP_COUNT -p threadcount=$CLIENT_COUNT 2>&1 | tee -a $OUTPUT_FILE
-        echo "# YCSB-B:" | tee -a $OUTPUT_FILE
-        $YCSB_DIR/bin/ycsb run memcached -s -P $YCSB_DIR/workloads/workloadb -p $MEMCACHED_HOST -p operationcount=$OP_COUNT -p threadcount=$CLIENT_COUNT 2>&1 | tee -a $OUTPUT_FILE
+            echo "## client cnt: $CLIENT_COUNT" | tee -a $OUTPUT_FILE
+            echo "# load data:" | tee -a $OUTPUT_FILE
+            $YCSB_DIR/bin/ycsb load memcached -s -P $YCSB_DIR/workloads/workloada $KV_OPTION -p $MEMCACHED_HOST -p recordcount=$RECORD_COUNT -p threadcount=$CLIENT_COUNT 2>&1 | tee -a $OUTPUT_FILE
+            echo "# YCSB-A:" | tee -a $OUTPUT_FILE
+            $YCSB_DIR/bin/ycsb run memcached -s -P $YCSB_DIR/workloads/workloada $KV_OPTION -p $MEMCACHED_HOST -p operationcount=$OP_COUNT -p threadcount=$CLIENT_COUNT 2>&1 | tee -a $OUTPUT_FILE
+            echo "# YCSB-B:" | tee -a $OUTPUT_FILE
+            $YCSB_DIR/bin/ycsb run memcached -s -P $YCSB_DIR/workloads/workloadb $KV_OPTION -p $MEMCACHED_HOST -p operationcount=$OP_COUNT -p threadcount=$CLIENT_COUNT 2>&1 | tee -a $OUTPUT_FILE
 
-        end_memcached_$CONNECTION
-        
+            end_memcached_$CONNECTION
+            
+        done
     done
 done
