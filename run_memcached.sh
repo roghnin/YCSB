@@ -13,6 +13,7 @@ MEMCACHED_OPTIONS=(
     "montage_wb_cache"
     "master"
 )
+
 CLIENT_COUNTS=(8 16 24 32 40)
 KV_OPTIONS=(
     "-p fieldcount=10 -p fieldlength=100"
@@ -20,6 +21,7 @@ KV_OPTIONS=(
 )
 RECORD_COUNT=10000000
 OP_COUNT=20000000
+WORKER_THREAD_CNT=8
 
 # env options:
 MONTAGE_DIR=`realpath ../Montage`
@@ -60,7 +62,7 @@ prepare_memcached_local () {
 start_memcached_local() {
     rm -rf $NVM_DIR/${USER}*
     echo "starting Memcached server"
-    $MEMCACHED_DIR/memcached --memory-limit=4194304
+    $MEMCACHED_DIR/memcached --memory-limit=4194304 -t $WORKER_THREAD_CNT
 }
 
 end_memcached_local() {
@@ -97,7 +99,7 @@ start_memcached_remote() {
     remote_execute "
         rm -rf $REMOTE_NVM_DIR/${USER}*;
         echo \"starting Memcached server\";
-        $REMOTE_MEMCACHED_DIR/memcached --memory-limit=4194304;
+        $REMOTE_MEMCACHED_DIR/memcached --memory-limit=4194304 -t $WORKER_THREAD_CNT;
     "
 }
 
@@ -125,6 +127,7 @@ for MEMCACHED_OPTION in ${MEMCACHED_OPTIONS[@]}; do
         echo "### KV option: $KV_OPTION" | tee -a $OUTPUT_FILE
         for CLIENT_COUNT in ${CLIENT_COUNTS[@]}; do
             start_memcached_$CONNECTION &
+            sleep 3s
 
             echo "## client cnt: $CLIENT_COUNT" | tee -a $OUTPUT_FILE
             echo "# load data:" | tee -a $OUTPUT_FILE
@@ -135,7 +138,6 @@ for MEMCACHED_OPTION in ${MEMCACHED_OPTIONS[@]}; do
             $YCSB_DIR/bin/ycsb run memcached -s -P $YCSB_DIR/workloads/workloadb $KV_OPTION -p $MEMCACHED_HOST -p operationcount=$OP_COUNT -p threadcount=$CLIENT_COUNT 2>&1 | tee -a $OUTPUT_FILE
 
             end_memcached_$CONNECTION
-            
         done
     done
 done
