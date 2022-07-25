@@ -15,10 +15,6 @@ CONNECTION=local
 # )
 MEMCACHED_OPTIONS=(
     "montage_wt_cache"
-    "montage_wb_cache"
-    "montage_nvm_payloads"
-    "montage_dram_payloads"
-    "master"
 )
 
 # CLIENT_COUNTS=(8 16 24 32 40)
@@ -28,10 +24,10 @@ KV_OPTIONS=(
     "-p fieldcount=1 -p fieldlength=32"
 )
 WORKER_THREAD_CNTS=(4 16)
-# RECORD_COUNT=10000000
-# OP_COUNT=20000000
-RECORD_COUNT=10000
-OP_COUNT=20000
+RECORD_COUNT=10000000
+OP_COUNT=20000000
+# RECORD_COUNT=100000
+# OP_COUNT=200000
 
 # env options:
 MONTAGE_DIR=`realpath ../Montage`
@@ -47,8 +43,9 @@ REMOTE_NVM_DIR="/mnt/pmem0"
 MEMCACHED_HOST_remote="memcached.hosts=node2x20a"
 
 # common options:
-MEMCACHED_MEMORY_LIMIT=40960 # MB
+MEMCACHED_MEMORY_LIMIT=81920 # MB
 MEMCACHED_EXEC="memcached-debug"
+# MEMCACHED_EXEC="memcached"
 
 # generated envs:
 YCSB_DIR=`pwd`
@@ -77,14 +74,16 @@ start_memcached_local() {
     rm -rf $NVM_DIR/${USER}*
     echo "starting Memcached server"
     # tmux send-keys -t memcached_session.0 "$MEMCACHED_DIR/memcached --memory-limit=$MEMCACHED_MEMORY_LIMIT -t $1 -v" Enter
+
+    # for debugging:
+    tmux send-keys -t memcached_session.0 "q" Enter
+    tmux send-keys -t memcached_session.0 "q" Enter
     tmux send-keys -t memcached_session.0 "gdb -x $YCSB_DIR/gdbinit --args $MEMCACHED_DIR/$MEMCACHED_EXEC --memory-limit=$MEMCACHED_MEMORY_LIMIT -t $1 -v" Enter
 }
 
 end_memcached_local() {
     echo "killing Memcached server"
-    sleep 1s
-    echo "quit" | telnet localhost 11211
-    # killall $MEMCACHED_EXEC
+    killall $MEMCACHED_EXEC
 }
 
 start_memcached_session_local() {
