@@ -1,0 +1,1168 @@
+#### worker thread cnt: 4
+### KV option: -p fieldcount=10 -p fieldlength=100
+## client cnt: 4
+# load data:
+[WARN]  Running against a source checkout. In order to get our runtime dependencies we'll have to invoke Maven. Depending on the state of your system, this may take ~30-45 seconds
+[DEBUG]  Running 'mvn -pl site.ycsb:memcached-binding -am package -DskipTests dependency:build-classpath -DincludeScope=compile -Dmdep.outputFilterFile=true'
+java -cp /u/hwen5/workspace/YCSB/memcached/conf:/u/hwen5/workspace/YCSB/memcached/target/memcached-binding-0.18.0-SNAPSHOT.jar:/u/hwen5/.m2/repository/org/apache/htrace/htrace-core4/4.1.0-incubating/htrace-core4-4.1.0-incubating.jar:/u/hwen5/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.4/HdrHistogram-2.1.4.jar:/u/hwen5/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/u/hwen5/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar:/u/hwen5/.m2/repository/net/spy/spymemcached/2.11.4/spymemcached-2.11.4.jar:/u/hwen5/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.4/jackson-core-asl-1.9.4.jar:/localdisk/hwen5/workspace/YCSB/core/target/core-0.18.0-SNAPSHOT.jar site.ycsb.Client -db site.ycsb.db.MemcachedClient -s -P /u/hwen5/workspace/YCSB/workloads/workloada -p fieldcount=10 -p fieldlength=100 -p memcached.hosts=127.0.0.1 -p recordcount=10000000 -p threadcount=4 -load
+Command line: -db site.ycsb.db.MemcachedClient -s -P /u/hwen5/workspace/YCSB/workloads/workloada -p fieldcount=10 -p fieldlength=100 -p memcached.hosts=127.0.0.1 -p recordcount=10000000 -p threadcount=4 -load
+YCSB Client 0.18.0-SNAPSHOT
+
+Loading workload...
+log4j:WARN No appenders could be found for logger (org.apache.htrace.core.Tracer).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Starting test.
+2022-07-29 15:29:56:847 0 sec: 0 operations; est completion in 0 second 
+2022-07-29 15:29:56.939 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:29:56.939 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:29:56.939 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:29:56.939 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+['52914', '52906', '52897', '52893', '52875', '52861', '52802', '52805', '52807', '52809', '52811', '52812', '52813', '52814', '52815', '52816', '52817', '52818', '52819', '52820', '52821', '52822', '52823', '52824', '52825', '52826', '52827', '52828', '52829', '52830', '52831', '52832', '52833', '52834', '52835', '52836', '52837', '52838', '52839', '52840', '52841', '52842', '52843', '52844', '52845', '52846', '52847', '52848', '52849', '52850', '52851', '52852', '52853', '52854', '52855', '52856', '52857', '52858', '52859']
+pid 52914's current affinity list: 0-79
+pid 52914's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52906's current affinity list: 0-79
+pid 52906's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52897's current affinity list: 0-79
+pid 52897's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52893's current affinity list: 0-79
+pid 52893's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52875's current affinity list: 0-79
+pid 52875's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52861's current affinity list: 0-79
+pid 52861's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52802's current affinity list: 0-79
+pid 52802's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52805's current affinity list: 0-79
+pid 52805's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52807's current affinity list: 0-79
+pid 52807's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52809's current affinity list: 0-79
+pid 52809's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52811's current affinity list: 0-79
+pid 52811's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52812's current affinity list: 0-79
+pid 52812's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52813's current affinity list: 0-79
+pid 52813's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52814's current affinity list: 0-79
+pid 52814's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52815's current affinity list: 0-79
+pid 52815's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52816's current affinity list: 0-79
+pid 52816's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52817's current affinity list: 0-79
+pid 52817's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52818's current affinity list: 0-79
+pid 52818's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52819's current affinity list: 0-79
+pid 52819's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52820's current affinity list: 0-79
+pid 52820's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52821's current affinity list: 0-79
+pid 52821's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52822's current affinity list: 0-79
+pid 52822's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52823's current affinity list: 0-79
+pid 52823's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52824's current affinity list: 0-79
+pid 52824's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52825's current affinity list: 0-79
+pid 52825's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52826's current affinity list: 0-79
+pid 52826's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52827's current affinity list: 0-79
+pid 52827's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52828's current affinity list: 0-79
+pid 52828's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52829's current affinity list: 0-79
+pid 52829's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52830's current affinity list: 0-79
+pid 52830's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52831's current affinity list: 0-79
+pid 52831's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52832's current affinity list: 0-79
+pid 52832's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52833's current affinity list: 0-79
+pid 52833's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52834's current affinity list: 0-79
+pid 52834's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52835's current affinity list: 0-79
+pid 52835's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52836's current affinity list: 0-79
+pid 52836's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52837's current affinity list: 0-79
+pid 52837's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52838's current affinity list: 0-79
+pid 52838's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52839's current affinity list: 0-79
+pid 52839's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52840's current affinity list: 0-79
+pid 52840's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52841's current affinity list: 0-79
+pid 52841's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52842's current affinity list: 0-79
+pid 52842's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52843's current affinity list: 0-79
+pid 52843's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52844's current affinity list: 0-79
+pid 52844's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52845's current affinity list: 0-79
+pid 52845's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52846's current affinity list: 0-79
+pid 52846's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52847's current affinity list: 0-79
+pid 52847's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52848's current affinity list: 0-79
+pid 52848's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52849's current affinity list: 0-79
+pid 52849's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52850's current affinity list: 0-79
+pid 52850's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52851's current affinity list: 0-79
+pid 52851's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52852's current affinity list: 0-79
+pid 52852's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52853's current affinity list: 0-79
+pid 52853's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52854's current affinity list: 0-79
+pid 52854's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52855's current affinity list: 0-79
+pid 52855's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52856's current affinity list: 0-79
+pid 52856's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52857's current affinity list: 0-79
+pid 52857's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52858's current affinity list: 0-79
+pid 52858's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 52859's current affinity list: 0-79
+pid 52859's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+2022-07-29 15:30:06:847 10 sec: 426539 operations; 42653.9 current ops/sec; est completion in 3 minutes [INSERT: Count=426578, Max=49119, Min=43, Avg=89.49, 90=145, 99=211, 99.9=1074, 99.99=2469] 
+2022-07-29 15:30:16:848 20 sec: 897146 operations; 47055.99 current ops/sec; est completion in 3 minutes [INSERT: Count=470704, Max=16303, Min=46, Avg=82.15, 90=93, 99=194, 99.9=1028, 99.99=1522] 
+2022-07-29 15:30:26:847 30 sec: 1317874 operations; 42072.8 current ops/sec; est completion in 3 minutes [INSERT: Count=420640, Max=15503, Min=42, Avg=91.94, 90=165, 99=216, 99.9=1065, 99.99=1630] 
+2022-07-29 15:30:36:847 40 sec: 1848388 operations; 53056.71 current ops/sec; est completion in 2 minutes [INSERT: Count=530561, Max=17967, Min=42, Avg=73.04, 90=78, 99=159, 99.9=953, 99.99=1364] 
+2022-07-29 15:30:46:848 50 sec: 2378172 operations; 52978.4 current ops/sec; est completion in 2 minutes [INSERT: Count=529756, Max=17599, Min=45, Avg=73.48, 90=87, 99=148, 99.9=989, 99.99=1331] 
+2022-07-29 15:30:56:848 60 sec: 2906340 operations; 52816.8 current ops/sec; est completion in 2 minutes [INSERT: Count=528174, Max=19279, Min=46, Avg=73.64, 90=81, 99=141, 99.9=1000, 99.99=1222] 
+2022-07-29 15:31:06:847 70 sec: 3450201 operations; 54386.1 current ops/sec; est completion in 2 minutes [INSERT: Count=543853, Max=31711, Min=45, Avg=71.56, 90=79, 99=134, 99.9=954, 99.99=1180] 
+2022-07-29 15:31:16:847 80 sec: 4014326 operations; 56412.5 current ops/sec; est completion in 2 minutes [INSERT: Count=564099, Max=22479, Min=45, Avg=68.96, 90=70, 99=98, 99.9=905, 99.99=1113] 
+2022-07-29 15:31:26:847 90 sec: 4585518 operations; 57119.2 current ops/sec; est completion in 1 minute [INSERT: Count=571242, Max=23983, Min=45, Avg=68.1, 90=73, 99=116, 99.9=917, 99.99=1313] 
+2022-07-29 15:31:36:847 100 sec: 5138728 operations; 55321 current ops/sec; est completion in 1 minute [INSERT: Count=553209, Max=28431, Min=45, Avg=70.29, 90=69, 99=86, 99.9=910, 99.99=1316] 
+2022-07-29 15:31:46:847 110 sec: 5691616 operations; 55288.8 current ops/sec; est completion in 1 minute [INSERT: Count=552866, Max=23919, Min=44, Avg=70.33, 90=78, 99=123, 99.9=930, 99.99=1223] 
+2022-07-29 15:31:56:847 120 sec: 6276821 operations; 58520.5 current ops/sec; est completion in 1 minute [INSERT: Count=585212, Max=28591, Min=43, Avg=66.49, 90=71, 99=124, 99.9=906, 99.99=1134] 
+2022-07-29 15:32:06:847 130 sec: 6843093 operations; 56627.2 current ops/sec; est completion in 1 minute [INSERT: Count=566285, Max=15295, Min=44, Avg=68.75, 90=72, 99=117, 99.9=920, 99.99=1080] 
+2022-07-29 15:32:16:846 140 sec: 7429752 operations; 58665.9 current ops/sec; est completion in 49 seconds [INSERT: Count=586573, Max=19711, Min=44, Avg=66.31, 90=73, 99=105, 99.9=912, 99.99=1093] 
+2022-07-29 15:32:26:847 150 sec: 7997707 operations; 56795.5 current ops/sec; est completion in 38 seconds [INSERT: Count=568057, Max=20399, Min=45, Avg=68.58, 90=71, 99=90, 99.9=893, 99.99=1103] 
+2022-07-29 15:32:36:847 160 sec: 8584500 operations; 58679.3 current ops/sec; est completion in 27 seconds [INSERT: Count=586691, Max=33919, Min=44, Avg=66.33, 90=69, 99=115, 99.9=884, 99.99=992] 
+2022-07-29 15:32:46:853 170 sec: 9161979 operations; 57707.5 current ops/sec; est completion in 16 seconds [INSERT: Count=577506, Max=21359, Min=44, Avg=67.48, 90=70, 99=87, 99.9=892, 99.99=1010] 
+2022-07-29 15:32:56:847 180 sec: 9765030 operations; 60347.34 current ops/sec; est completion in 5 second [INSERT: Count=603075, Max=25663, Min=43, Avg=64.23, 90=69, 99=91, 99.9=897, 99.99=1136] 
+2022-07-29 15:32:57.538 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:33:01.070 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:33:01.408 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:33:04.552 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:33:04:552 187 sec: 10000000 operations; 30491.82 current ops/sec; [CLEANUP: Count=4, Max=4895, Min=612, Avg=1802.25, 90=4895, 99=4895, 99.9=4895, 99.99=4895] [INSERT: Count=234919, Max=26399, Min=45, Avg=70.08, 90=74, 99=93, 99.9=912, 99.99=1068] 
+[OVERALL], RunTime(ms), 187706
+[OVERALL], Throughput(ops/sec), 53274.802084110255
+[TOTAL_GCS_PS_Scavenge], Count, 88
+[TOTAL_GC_TIME_PS_Scavenge], Time(ms), 1296
+[TOTAL_GC_TIME_%_PS_Scavenge], Time(%), 0.6904414350100689
+[TOTAL_GCS_PS_MarkSweep], Count, 0
+[TOTAL_GC_TIME_PS_MarkSweep], Time(ms), 0
+[TOTAL_GC_TIME_%_PS_MarkSweep], Time(%), 0.0
+[TOTAL_GCs], Count, 88
+[TOTAL_GC_TIME], Time(ms), 1296
+[TOTAL_GC_TIME_%], Time(%), 0.6904414350100689
+[CLEANUP], Operations, 4
+[CLEANUP], AverageLatency(us), 1802.25
+[CLEANUP], MinLatency(us), 612
+[CLEANUP], MaxLatency(us), 4895
+[CLEANUP], 95thPercentileLatency(us), 4895
+[CLEANUP], 99thPercentileLatency(us), 4895
+[INSERT], Operations, 10000000
+[INSERT], AverageLatency(us), 71.5358247
+[INSERT], MinLatency(us), 42
+[INSERT], MaxLatency(us), 49119
+[INSERT], 95thPercentileLatency(us), 88
+[INSERT], 99thPercentileLatency(us), 179
+[INSERT], Return=OK, 10000000
+## client cnt: 8
+# load data:
+[WARN]  Running against a source checkout. In order to get our runtime dependencies we'll have to invoke Maven. Depending on the state of your system, this may take ~30-45 seconds
+[DEBUG]  Running 'mvn -pl site.ycsb:memcached-binding -am package -DskipTests dependency:build-classpath -DincludeScope=compile -Dmdep.outputFilterFile=true'
+java -cp /u/hwen5/workspace/YCSB/memcached/conf:/u/hwen5/workspace/YCSB/memcached/target/memcached-binding-0.18.0-SNAPSHOT.jar:/u/hwen5/.m2/repository/org/apache/htrace/htrace-core4/4.1.0-incubating/htrace-core4-4.1.0-incubating.jar:/u/hwen5/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.4/HdrHistogram-2.1.4.jar:/u/hwen5/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/u/hwen5/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar:/u/hwen5/.m2/repository/net/spy/spymemcached/2.11.4/spymemcached-2.11.4.jar:/u/hwen5/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.4/jackson-core-asl-1.9.4.jar:/localdisk/hwen5/workspace/YCSB/core/target/core-0.18.0-SNAPSHOT.jar site.ycsb.Client -db site.ycsb.db.MemcachedClient -s -P /u/hwen5/workspace/YCSB/workloads/workloada -p fieldcount=10 -p fieldlength=100 -p memcached.hosts=127.0.0.1 -p recordcount=10000000 -p threadcount=8 -load
+Command line: -db site.ycsb.db.MemcachedClient -s -P /u/hwen5/workspace/YCSB/workloads/workloada -p fieldcount=10 -p fieldlength=100 -p memcached.hosts=127.0.0.1 -p recordcount=10000000 -p threadcount=8 -load
+YCSB Client 0.18.0-SNAPSHOT
+
+Loading workload...
+log4j:WARN No appenders could be found for logger (org.apache.htrace.core.Tracer).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Starting test.
+2022-07-29 15:33:19:399 0 sec: 0 operations; est completion in 0 second 
+2022-07-29 15:33:19.495 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:33:19.495 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:33:19.496 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:33:19.495 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2022-07-29 15:33:19.497 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:33:19.499 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:33:19.499 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:33:19.500 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+['54177', '54169', '54160', '54155', '54149', '54148', '54124', '54050', '54052', '54054', '54057', '54059', '54061', '54063', '54065', '54068', '54070', '54073', '54076', '54078', '54080', '54082', '54084', '54085', '54087', '54088', '54089', '54090', '54091', '54092', '54093', '54094', '54095', '54096', '54097', '54098', '54099', '54100', '54101', '54102', '54103', '54104', '54105', '54106', '54107', '54108', '54109', '54110', '54111', '54112', '54113', '54114', '54115', '54116', '54117', '54118', '54119', '54120', '54121', '54122']
+pid 54177's current affinity list: 0-79
+pid 54177's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54169's current affinity list: 0-79
+pid 54169's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54160's current affinity list: 0-79
+pid 54160's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54155's current affinity list: 0-79
+pid 54155's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54149's current affinity list: 0-79
+pid 54149's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54148's current affinity list: 0-79
+pid 54148's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54124's current affinity list: 0-79
+pid 54124's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54050's current affinity list: 0-79
+pid 54050's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54052's current affinity list: 0-79
+pid 54052's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54054's current affinity list: 0-79
+pid 54054's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54057's current affinity list: 0-79
+pid 54057's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54059's current affinity list: 0-79
+pid 54059's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54061's current affinity list: 0-79
+pid 54061's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54063's current affinity list: 0-79
+pid 54063's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54065's current affinity list: 0-79
+pid 54065's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54068's current affinity list: 0-79
+pid 54068's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54070's current affinity list: 0-79
+pid 54070's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54073's current affinity list: 0-79
+pid 54073's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54076's current affinity list: 0-79
+pid 54076's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54078's current affinity list: 0-79
+pid 54078's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54080's current affinity list: 0-79
+pid 54080's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54082's current affinity list: 0-79
+pid 54082's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54084's current affinity list: 0-79
+pid 54084's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54085's current affinity list: 0-79
+pid 54085's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54087's current affinity list: 0-79
+pid 54087's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54088's current affinity list: 0-79
+pid 54088's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54089's current affinity list: 0-79
+pid 54089's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54090's current affinity list: 0-79
+pid 54090's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54091's current affinity list: 0-79
+pid 54091's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54092's current affinity list: 0-79
+pid 54092's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54093's current affinity list: 0-79
+pid 54093's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54094's current affinity list: 0-79
+pid 54094's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54095's current affinity list: 0-79
+pid 54095's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54096's current affinity list: 0-79
+pid 54096's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54097's current affinity list: 0-79
+pid 54097's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54098's current affinity list: 0-79
+pid 54098's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54099's current affinity list: 0-79
+pid 54099's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54100's current affinity list: 0-79
+pid 54100's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54101's current affinity list: 0-79
+pid 54101's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54102's current affinity list: 0-79
+pid 54102's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54103's current affinity list: 0-79
+pid 54103's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54104's current affinity list: 0-79
+pid 54104's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54105's current affinity list: 0-79
+pid 54105's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54106's current affinity list: 0-79
+pid 54106's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54107's current affinity list: 0-79
+pid 54107's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54108's current affinity list: 0-79
+pid 54108's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54109's current affinity list: 0-79
+pid 54109's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54110's current affinity list: 0-79
+pid 54110's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54111's current affinity list: 0-79
+pid 54111's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54112's current affinity list: 0-79
+pid 54112's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54113's current affinity list: 0-79
+pid 54113's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54114's current affinity list: 0-79
+pid 54114's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54115's current affinity list: 0-79
+pid 54115's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54116's current affinity list: 0-79
+pid 54116's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54117's current affinity list: 0-79
+pid 54117's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54118's current affinity list: 0-79
+pid 54118's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54119's current affinity list: 0-79
+pid 54119's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54120's current affinity list: 0-79
+pid 54120's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54121's current affinity list: 0-79
+pid 54121's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54122's current affinity list: 0-79
+pid 54122's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+2022-07-29 15:33:29:399 10 sec: 912749 operations; 91274.9 current ops/sec; est completion in 1 minute [INSERT: Count=912932, Max=53631, Min=42, Avg=83.82, 90=92, 99=636, 99.9=839, 99.99=2863] 
+2022-07-29 15:33:39:399 20 sec: 1656551 operations; 74380.2 current ops/sec; est completion in 1 minute [INSERT: Count=743719, Max=16815, Min=38, Avg=104.33, 90=188, 99=650, 99.9=1023, 99.99=2793] 
+2022-07-29 15:33:49:399 30 sec: 2626994 operations; 97044.3 current ops/sec; est completion in 1 minute [INSERT: Count=970438, Max=23663, Min=33, Avg=80.05, 90=90, 99=565, 99.9=817, 99.99=1487] 
+2022-07-29 15:33:59:399 40 sec: 3587436 operations; 96044.2 current ops/sec; est completion in 1 minute [INSERT: Count=960366, Max=25743, Min=34, Avg=80.85, 90=95, 99=596, 99.9=909, 99.99=2943] 
+2022-07-29 15:34:09:399 50 sec: 4559672 operations; 97213.88 current ops/sec; est completion in 1 minute [INSERT: Count=972301, Max=13943, Min=43, Avg=79.94, 90=86, 99=631, 99.9=911, 99.99=5459] 
+2022-07-29 15:34:19:399 60 sec: 5517832 operations; 95825.58 current ops/sec; est completion in 49 seconds [INSERT: Count=958178, Max=27727, Min=38, Avg=81.07, 90=91, 99=614, 99.9=815, 99.99=4843] 
+2022-07-29 15:34:29:400 70 sec: 6488474 operations; 97064.2 current ops/sec; est completion in 38 seconds [INSERT: Count=970733, Max=26191, Min=34, Avg=80.03, 90=88, 99=620, 99.9=835, 99.99=3497] 
+2022-07-29 15:34:39:398 80 sec: 7477743 operations; 98926.9 current ops/sec; est completion in 27 seconds [INSERT: Count=989125, Max=12823, Min=42, Avg=78.46, 90=86, 99=645, 99.9=818, 99.99=3651] 
+2022-07-29 15:34:49:399 90 sec: 8423559 operations; 94581.6 current ops/sec; est completion in 17 seconds [INSERT: Count=945820, Max=20447, Min=35, Avg=82.34, 90=83, 99=542, 99.9=807, 99.99=2877] 
+2022-07-29 15:34:59:399 100 sec: 9379575 operations; 95601.6 current ops/sec; est completion in 7 second [INSERT: Count=955987, Max=16063, Min=38, Avg=81.48, 90=84, 99=607, 99.9=774, 99.99=5187] 
+2022-07-29 15:35:01.006 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:35:01.161 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:35:03.408 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:35:06.222 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:35:06.945 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:35:08.144 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:35:08.586 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:35:08.672 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:35:08:673 109 sec: 10000000 operations; 66899.4 current ops/sec; [CLEANUP: Count=8, Max=7131, Min=505, Avg=1526.62, 90=897, 99=7131, 99.9=7131, 99.99=7131] [INSERT: Count=620401, Max=23343, Min=41, Avg=76.5, 90=85, 99=169, 99.9=727, 99.99=1808] 
+[OVERALL], RunTime(ms), 109274
+[OVERALL], Throughput(ops/sec), 91513.07721873456
+[TOTAL_GCS_PS_Scavenge], Count, 63
+[TOTAL_GC_TIME_PS_Scavenge], Time(ms), 818
+[TOTAL_GC_TIME_%_PS_Scavenge], Time(%), 0.7485769716492486
+[TOTAL_GCS_PS_MarkSweep], Count, 0
+[TOTAL_GC_TIME_PS_MarkSweep], Time(ms), 0
+[TOTAL_GC_TIME_%_PS_MarkSweep], Time(%), 0.0
+[TOTAL_GCs], Count, 63
+[TOTAL_GC_TIME], Time(ms), 818
+[TOTAL_GC_TIME_%], Time(%), 0.7485769716492486
+[CLEANUP], Operations, 8
+[CLEANUP], AverageLatency(us), 1526.625
+[CLEANUP], MinLatency(us), 505
+[CLEANUP], MaxLatency(us), 7131
+[CLEANUP], 95thPercentileLatency(us), 7131
+[CLEANUP], 99thPercentileLatency(us), 7131
+[INSERT], Operations, 10000000
+[INSERT], AverageLatency(us), 82.3372028
+[INSERT], MinLatency(us), 33
+[INSERT], MaxLatency(us), 53631
+[INSERT], 95thPercentileLatency(us), 120
+[INSERT], 99thPercentileLatency(us), 609
+[INSERT], Return=OK, 10000000
+## client cnt: 12
+# load data:
+[WARN]  Running against a source checkout. In order to get our runtime dependencies we'll have to invoke Maven. Depending on the state of your system, this may take ~30-45 seconds
+[DEBUG]  Running 'mvn -pl site.ycsb:memcached-binding -am package -DskipTests dependency:build-classpath -DincludeScope=compile -Dmdep.outputFilterFile=true'
+java -cp /u/hwen5/workspace/YCSB/memcached/conf:/u/hwen5/workspace/YCSB/memcached/target/memcached-binding-0.18.0-SNAPSHOT.jar:/u/hwen5/.m2/repository/org/apache/htrace/htrace-core4/4.1.0-incubating/htrace-core4-4.1.0-incubating.jar:/u/hwen5/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.4/HdrHistogram-2.1.4.jar:/u/hwen5/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/u/hwen5/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar:/u/hwen5/.m2/repository/net/spy/spymemcached/2.11.4/spymemcached-2.11.4.jar:/u/hwen5/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.4/jackson-core-asl-1.9.4.jar:/localdisk/hwen5/workspace/YCSB/core/target/core-0.18.0-SNAPSHOT.jar site.ycsb.Client -db site.ycsb.db.MemcachedClient -s -P /u/hwen5/workspace/YCSB/workloads/workloada -p fieldcount=10 -p fieldlength=100 -p memcached.hosts=127.0.0.1 -p recordcount=10000000 -p threadcount=12 -load
+Command line: -db site.ycsb.db.MemcachedClient -s -P /u/hwen5/workspace/YCSB/workloads/workloada -p fieldcount=10 -p fieldlength=100 -p memcached.hosts=127.0.0.1 -p recordcount=10000000 -p threadcount=12 -load
+YCSB Client 0.18.0-SNAPSHOT
+
+Loading workload...
+log4j:WARN No appenders could be found for logger (org.apache.htrace.core.Tracer).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Starting test.
+2022-07-29 15:35:23:772 0 sec: 0 operations; est completion in 0 second 
+2022-07-29 15:35:23.870 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:35:23.870 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:35:23.871 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:35:23.872 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2022-07-29 15:35:23.872 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:35:23.873 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:35:23.873 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:35:23.874 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:35:23.874 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:35:23.875 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:35:23.875 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:35:23.875 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+['55123', '55114', '55077', '55071', '54973', '54975', '54977', '54979', '54980', '54982', '54983', '54985', '54986', '54988', '54989', '54990', '54992', '54994', '54996', '54998', '55000', '55002', '55004', '55005', '55007', '55008', '55010', '55011', '55012', '55013', '55015', '55016', '55018', '55019', '55020', '55022', '55024', '55025', '55026', '55028', '55030', '55032', '55034', '55036', '55038', '55040', '55042', '55044', '55046', '55048', '55050', '55051', '55052', '55054', '55055', '55057', '55058']
+pid 55123's current affinity list: 0-79
+pid 55123's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55114's current affinity list: 0-79
+pid 55114's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55077's current affinity list: 0-79
+pid 55077's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55071's current affinity list: 0-79
+pid 55071's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54973's current affinity list: 0-79
+pid 54973's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54975's current affinity list: 0-79
+pid 54975's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54977's current affinity list: 0-79
+pid 54977's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54979's current affinity list: 0-79
+pid 54979's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54980's current affinity list: 0-79
+pid 54980's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54982's current affinity list: 0-79
+pid 54982's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54983's current affinity list: 0-79
+pid 54983's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54985's current affinity list: 0-79
+pid 54985's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54986's current affinity list: 0-79
+pid 54986's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54988's current affinity list: 0-79
+pid 54988's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54989's current affinity list: 0-79
+pid 54989's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54990's current affinity list: 0-79
+pid 54990's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54992's current affinity list: 0-79
+pid 54992's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54994's current affinity list: 0-79
+pid 54994's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54996's current affinity list: 0-79
+pid 54996's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 54998's current affinity list: 0-79
+pid 54998's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55000's current affinity list: 0-79
+pid 55000's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55002's current affinity list: 0-79
+pid 55002's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55004's current affinity list: 0-79
+pid 55004's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55005's current affinity list: 0-79
+pid 55005's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55007's current affinity list: 0-79
+pid 55007's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55008's current affinity list: 0-79
+pid 55008's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55010's current affinity list: 0-79
+pid 55010's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55011's current affinity list: 0-79
+pid 55011's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55012's current affinity list: 0-79
+pid 55012's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55013's current affinity list: 0-79
+pid 55013's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55015's current affinity list: 0-79
+pid 55015's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55016's current affinity list: 0-79
+pid 55016's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55018's current affinity list: 0-79
+pid 55018's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55019's current affinity list: 0-79
+pid 55019's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55020's current affinity list: 0-79
+pid 55020's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55022's current affinity list: 0-79
+pid 55022's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55024's current affinity list: 0-79
+pid 55024's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55025's current affinity list: 0-79
+pid 55025's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55026's current affinity list: 0-79
+pid 55026's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55028's current affinity list: 0-79
+pid 55028's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55030's current affinity list: 0-79
+pid 55030's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55032's current affinity list: 0-79
+pid 55032's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55034's current affinity list: 0-79
+pid 55034's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55036's current affinity list: 0-79
+pid 55036's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55038's current affinity list: 0-79
+pid 55038's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55040's current affinity list: 0-79
+pid 55040's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55042's current affinity list: 0-79
+pid 55042's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55044's current affinity list: 0-79
+pid 55044's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55046's current affinity list: 0-79
+pid 55046's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55048's current affinity list: 0-79
+pid 55048's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55050's current affinity list: 0-79
+pid 55050's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55051's current affinity list: 0-79
+pid 55051's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55052's current affinity list: 0-79
+pid 55052's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55054's current affinity list: 0-79
+pid 55054's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55055's current affinity list: 0-79
+pid 55055's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55057's current affinity list: 0-79
+pid 55057's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55058's current affinity list: 0-79
+pid 55058's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+2022-07-29 15:35:33:773 10 sec: 1136979 operations; 113686.53 current ops/sec; est completion in 1 minute [INSERT: Count=1137065, Max=54463, Min=38, Avg=101.1, 90=136, 99=650, 99.9=935, 99.99=10999] 
+2022-07-29 15:35:43:773 20 sec: 2417820 operations; 128084.1 current ops/sec; est completion in 1 minute [INSERT: Count=1280808, Max=26943, Min=38, Avg=90.95, 90=102, 99=628, 99.9=866, 99.99=1331] 
+2022-07-29 15:35:53:772 30 sec: 3743633 operations; 132581.3 current ops/sec; est completion in 51 seconds [INSERT: Count=1325841, Max=39327, Min=37, Avg=88.15, 90=96, 99=616, 99.9=792, 99.99=3281] 
+2022-07-29 15:36:03:772 40 sec: 5060900 operations; 131726.7 current ops/sec; est completion in 40 seconds [INSERT: Count=1317324, Max=39679, Min=39, Avg=88.64, 90=99, 99=632, 99.9=838, 99.99=4351] 
+2022-07-29 15:36:13:772 50 sec: 6391786 operations; 133088.6 current ops/sec; est completion in 29 seconds [INSERT: Count=1330786, Max=34335, Min=38, Avg=87.74, 90=99, 99=610, 99.9=808, 99.99=3177] 
+2022-07-29 15:36:23:772 60 sec: 7750793 operations; 135900.7 current ops/sec; est completion in 18 seconds [INSERT: Count=1359141, Max=23999, Min=38, Avg=85.92, 90=94, 99=646, 99.9=833, 99.99=3385] 
+2022-07-29 15:36:33:772 70 sec: 9207395 operations; 145660.2 current ops/sec; est completion in 7 second [INSERT: Count=1456494, Max=55903, Min=40, Avg=80.09, 90=85, 99=602, 99.9=726, 99.99=2839] 
+2022-07-29 15:36:34.062 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:36:34.229 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:36:35.730 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:36:37.890 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:36:39.109 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:36:40.150 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:36:40.282 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:36:40.313 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:36:41.455 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:36:41.864 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:36:42.563 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:36:43:772 80 sec: 9970149 operations; 76275.4 current ops/sec; est completion in 1 second [CLEANUP: Count=11, Max=9727, Min=541, Avg=1548.36, 90=953, 99=9727, 99.9=9727, 99.99=9727] [INSERT: Count=762765, Max=39263, Min=39, Avg=84.54, 90=90, 99=584, 99.9=937, 99.99=3421] 
+2022-07-29 15:36:46.444 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:36:46:445 82 sec: 10000000 operations; 11171.78 current ops/sec; [CLEANUP: Count=1, Max=904, Min=904, Avg=904, 90=904, 99=904, 99.9=904, 99.99=904] [INSERT: Count=29776, Max=5067, Min=63, Avg=87.4, 90=106, 99=236, 99.9=895, 99.99=1020] 
+[OVERALL], RunTime(ms), 82673
+[OVERALL], Throughput(ops/sec), 120958.47495554776
+[TOTAL_GCS_PS_Scavenge], Count, 41
+[TOTAL_GC_TIME_PS_Scavenge], Time(ms), 838
+[TOTAL_GC_TIME_%_PS_Scavenge], Time(%), 1.0136320201274902
+[TOTAL_GCS_PS_MarkSweep], Count, 0
+[TOTAL_GC_TIME_PS_MarkSweep], Time(ms), 0
+[TOTAL_GC_TIME_%_PS_MarkSweep], Time(%), 0.0
+[TOTAL_GCs], Count, 41
+[TOTAL_GC_TIME], Time(ms), 838
+[TOTAL_GC_TIME_%], Time(%), 1.0136320201274902
+[CLEANUP], Operations, 12
+[CLEANUP], AverageLatency(us), 1494.6666666666667
+[CLEANUP], MinLatency(us), 541
+[CLEANUP], MaxLatency(us), 9727
+[CLEANUP], 95thPercentileLatency(us), 953
+[CLEANUP], 99thPercentileLatency(us), 9727
+[INSERT], Operations, 10000000
+[INSERT], AverageLatency(us), 88.2357819
+[INSERT], MinLatency(us), 37
+[INSERT], MaxLatency(us), 55903
+[INSERT], 95thPercentileLatency(us), 133
+[INSERT], 99thPercentileLatency(us), 621
+[INSERT], Return=OK, 10000000
+## client cnt: 16
+# load data:
+[WARN]  Running against a source checkout. In order to get our runtime dependencies we'll have to invoke Maven. Depending on the state of your system, this may take ~30-45 seconds
+[DEBUG]  Running 'mvn -pl site.ycsb:memcached-binding -am package -DskipTests dependency:build-classpath -DincludeScope=compile -Dmdep.outputFilterFile=true'
+java -cp /u/hwen5/workspace/YCSB/memcached/conf:/u/hwen5/workspace/YCSB/memcached/target/memcached-binding-0.18.0-SNAPSHOT.jar:/u/hwen5/.m2/repository/org/apache/htrace/htrace-core4/4.1.0-incubating/htrace-core4-4.1.0-incubating.jar:/u/hwen5/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.4/HdrHistogram-2.1.4.jar:/u/hwen5/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/u/hwen5/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar:/u/hwen5/.m2/repository/net/spy/spymemcached/2.11.4/spymemcached-2.11.4.jar:/u/hwen5/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.4/jackson-core-asl-1.9.4.jar:/localdisk/hwen5/workspace/YCSB/core/target/core-0.18.0-SNAPSHOT.jar site.ycsb.Client -db site.ycsb.db.MemcachedClient -s -P /u/hwen5/workspace/YCSB/workloads/workloada -p fieldcount=10 -p fieldlength=100 -p memcached.hosts=127.0.0.1 -p recordcount=10000000 -p threadcount=16 -load
+Command line: -db site.ycsb.db.MemcachedClient -s -P /u/hwen5/workspace/YCSB/workloads/workloada -p fieldcount=10 -p fieldlength=100 -p memcached.hosts=127.0.0.1 -p recordcount=10000000 -p threadcount=16 -load
+YCSB Client 0.18.0-SNAPSHOT
+
+Loading workload...
+log4j:WARN No appenders could be found for logger (org.apache.htrace.core.Tracer).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Starting test.
+2022-07-29 15:37:01:642 0 sec: 0 operations; est completion in 0 second 
+['55959', '55947', '55939', '55937', '55909', '55903', '55816', '55818', '55820', '55822', '55824', '55826', '55829', '55830', '55832', '55835', '55837', '55839', '55841', '55843', '55845', '55847', '55849', '55851', '55852', '55854', '55856', '55858', '55860', '55862', '55864', '55866', '55867', '55869', '55871', '55873', '55875', '55877', '55878', '55880', '55882', '55884', '55886', '55887', '55888', '55889', '55890', '55891', '55892', '55893', '55894', '55895', '55896', '55897', '55898', '55899', '55900', '55901', '55902']
+pid 55959's current affinity list: 0-79
+pid 55959's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+2022-07-29 15:37:01.751 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:37:01.751 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:37:01.751 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:37:01.751 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+pid 55947's current affinity list: 0-79
+pid 55947's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+2022-07-29 15:37:01.751 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:37:01.751 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:37:01.753 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2022-07-29 15:37:01.752 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:37:01.754 INFO net.spy.memcached.MemcachedConnection:  pid 55939's current affinity list: 0-79
+pid 55939's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:37:01.755 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:37:01.756 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:37:01.756 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:37:01.757 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:37:01.757 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:37:01.758 INFO net.spy.memcached.MemcachedConnectionpid 55937's current affinity list: 0-79
+pid 55937's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:37:01.758 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+pid 55909's current affinity list: 0-79
+pid 55909's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55903's current affinity list: 0-79
+pid 55903's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55816's current affinity list: 0-79
+pid 55816's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55818's current affinity list: 0-79
+pid 55818's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55820's current affinity list: 0-79
+pid 55820's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55822's current affinity list: 0-79
+pid 55822's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55824's current affinity list: 0-79
+pid 55824's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55826's current affinity list: 0-79
+pid 55826's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55829's current affinity list: 0-79
+pid 55829's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55830's current affinity list: 0-79
+pid 55830's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55832's current affinity list: 0-79
+pid 55832's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55835's current affinity list: 0-79
+pid 55835's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55837's current affinity list: 0-79
+pid 55837's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55839's current affinity list: 0-79
+pid 55839's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55841's current affinity list: 0-79
+pid 55841's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55843's current affinity list: 0-79
+pid 55843's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55845's current affinity list: 0-79
+pid 55845's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55847's current affinity list: 0-79
+pid 55847's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55849's current affinity list: 0-79
+pid 55849's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55851's current affinity list: 0-79
+pid 55851's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55852's current affinity list: 0-79
+pid 55852's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55854's current affinity list: 0-79
+pid 55854's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55856's current affinity list: 0-79
+pid 55856's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55858's current affinity list: 0-79
+pid 55858's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55860's current affinity list: 0-79
+pid 55860's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55862's current affinity list: 0-79
+pid 55862's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55864's current affinity list: 0-79
+pid 55864's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55866's current affinity list: 0-79
+pid 55866's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55867's current affinity list: 0-79
+pid 55867's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55869's current affinity list: 0-79
+pid 55869's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55871's current affinity list: 0-79
+pid 55871's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55873's current affinity list: 0-79
+pid 55873's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55875's current affinity list: 0-79
+pid 55875's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55877's current affinity list: 0-79
+pid 55877's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55878's current affinity list: 0-79
+pid 55878's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55880's current affinity list: 0-79
+pid 55880's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55882's current affinity list: 0-79
+pid 55882's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55884's current affinity list: 0-79
+pid 55884's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55886's current affinity list: 0-79
+pid 55886's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55887's current affinity list: 0-79
+pid 55887's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55888's current affinity list: 0-79
+pid 55888's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55889's current affinity list: 0-79
+pid 55889's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55890's current affinity list: 0-79
+pid 55890's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55891's current affinity list: 0-79
+pid 55891's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55892's current affinity list: 0-79
+pid 55892's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55893's current affinity list: 0-79
+pid 55893's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55894's current affinity list: 0-79
+pid 55894's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55895's current affinity list: 0-79
+pid 55895's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55896's current affinity list: 0-79
+pid 55896's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55897's current affinity list: 0-79
+pid 55897's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55898's current affinity list: 0-79
+pid 55898's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55899's current affinity list: 0-79
+pid 55899's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55900's current affinity list: 0-79
+pid 55900's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55901's current affinity list: 0-79
+pid 55901's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 55902's current affinity list: 0-79
+pid 55902's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+2022-07-29 15:37:11:643 10 sec: 1443194 operations; 144319.4 current ops/sec; est completion in 1 minute [INSERT: Count=1443399, Max=57087, Min=42, Avg=106.36, 90=121, 99=631, 99.9=1007, 99.99=7515] 
+2022-07-29 15:37:21:643 20 sec: 2959976 operations; 151678.2 current ops/sec; est completion in 48 seconds [INSERT: Count=1516824, Max=43135, Min=41, Avg=102.5, 90=113, 99=626, 99.9=1061, 99.99=3157] 
+2022-07-29 15:37:31:643 30 sec: 4512083 operations; 155210.7 current ops/sec; est completion in 37 seconds [INSERT: Count=1551922, Max=53023, Min=42, Avg=100.26, 90=105, 99=657, 99.9=1020, 99.99=4107] 
+2022-07-29 15:37:41:642 40 sec: 6064815 operations; 155273.2 current ops/sec; est completion in 26 seconds [INSERT: Count=1552752, Max=7751, Min=40, Avg=100.64, 90=107, 99=623, 99.9=909, 99.99=5267] 
+2022-07-29 15:37:51:645 50 sec: 7742859 operations; 167804.4 current ops/sec; est completion in 15 seconds [INSERT: Count=1678437, Max=8743, Min=45, Avg=93.08, 90=94, 99=605, 99.9=923, 99.99=5163] 
+2022-07-29 15:38:01:642 60 sec: 9476911 operations; 173405.2 current ops/sec; est completion in 4 second [INSERT: Count=1733757, Max=50431, Min=42, Avg=89.83, 90=90, 99=587, 99.9=815, 99.99=5027] 
+2022-07-29 15:38:03.625 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:38:03.637 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:38:03.652 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:38:03.822 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:38:03.849 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:38:03.880 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:38:04.022 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:38:04.396 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:38:04.767 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:38:04.892 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:38:05.056 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:38:05.203 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:38:05.378 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:38:05.404 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:38:05.540 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:38:05.576 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:38:05:577 63 sec: 10000000 operations; 132966.19 current ops/sec; [CLEANUP: Count=16, Max=8447, Min=428, Avg=1194.38, 90=896, 99=8447, 99.9=8447, 99.99=8447] [INSERT: Count=522909, Max=6411, Min=53, Avg=86.45, 90=89, 99=590, 99.9=770, 99.99=2683] 
+[OVERALL], RunTime(ms), 63934
+[OVERALL], Throughput(ops/sec), 156411.29915225075
+[TOTAL_GCS_PS_Scavenge], Count, 51
+[TOTAL_GC_TIME_PS_Scavenge], Time(ms), 539
+[TOTAL_GC_TIME_%_PS_Scavenge], Time(%), 0.8430569024306316
+[TOTAL_GCS_PS_MarkSweep], Count, 0
+[TOTAL_GC_TIME_PS_MarkSweep], Time(ms), 0
+[TOTAL_GC_TIME_%_PS_MarkSweep], Time(%), 0.0
+[TOTAL_GCs], Count, 51
+[TOTAL_GC_TIME], Time(ms), 539
+[TOTAL_GC_TIME_%], Time(%), 0.8430569024306316
+[CLEANUP], Operations, 16
+[CLEANUP], AverageLatency(us), 1194.375
+[CLEANUP], MinLatency(us), 428
+[CLEANUP], MaxLatency(us), 8447
+[CLEANUP], 95thPercentileLatency(us), 1298
+[CLEANUP], 99thPercentileLatency(us), 8447
+[INSERT], Operations, 10000000
+[INSERT], AverageLatency(us), 97.8038286
+[INSERT], MinLatency(us), 40
+[INSERT], MaxLatency(us), 57087
+[INSERT], 95thPercentileLatency(us), 132
+[INSERT], 99thPercentileLatency(us), 618
+[INSERT], Return=OK, 10000000
+## client cnt: 20
+# load data:
+[WARN]  Running against a source checkout. In order to get our runtime dependencies we'll have to invoke Maven. Depending on the state of your system, this may take ~30-45 seconds
+[DEBUG]  Running 'mvn -pl site.ycsb:memcached-binding -am package -DskipTests dependency:build-classpath -DincludeScope=compile -Dmdep.outputFilterFile=true'
+java -cp /u/hwen5/workspace/YCSB/memcached/conf:/u/hwen5/workspace/YCSB/memcached/target/memcached-binding-0.18.0-SNAPSHOT.jar:/u/hwen5/.m2/repository/org/apache/htrace/htrace-core4/4.1.0-incubating/htrace-core4-4.1.0-incubating.jar:/u/hwen5/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.4/HdrHistogram-2.1.4.jar:/u/hwen5/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/u/hwen5/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar:/u/hwen5/.m2/repository/net/spy/spymemcached/2.11.4/spymemcached-2.11.4.jar:/u/hwen5/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.4/jackson-core-asl-1.9.4.jar:/localdisk/hwen5/workspace/YCSB/core/target/core-0.18.0-SNAPSHOT.jar site.ycsb.Client -db site.ycsb.db.MemcachedClient -s -P /u/hwen5/workspace/YCSB/workloads/workloada -p fieldcount=10 -p fieldlength=100 -p memcached.hosts=127.0.0.1 -p recordcount=10000000 -p threadcount=20 -load
+Command line: -db site.ycsb.db.MemcachedClient -s -P /u/hwen5/workspace/YCSB/workloads/workloada -p fieldcount=10 -p fieldlength=100 -p memcached.hosts=127.0.0.1 -p recordcount=10000000 -p threadcount=20 -load
+YCSB Client 0.18.0-SNAPSHOT
+
+Loading workload...
+log4j:WARN No appenders could be found for logger (org.apache.htrace.core.Tracer).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Starting test.
+2022-07-29 15:38:20:663 0 sec: 0 operations; est completion in 0 second 
+['56726', '56704', '56701', '56685', '56661', '56594', '56596', '56598', '56600', '56602', '56604', '56606', '56608', '56611', '56612', '56614', '56615', '56617', '56618', '56619', '56620', '56621', '56622', '56623', '56624', '56625', '56626', '56627', '56628', '56629', '56630', '56631', '56632', '56633', '56634', '56635', '56636', '56637', '56638', '56639', '56640', '56641', '56642', '56643', '56644', '56645', '56646', '56647', '56648', '56649', '56650', '56651', '56652', '56653', '56654', '56655', '56656', '56657']
+pid 56726's current affinity list: 0-79
+pid 56726's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56704's current affinity list: 0-79
+pid 56704's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56701's current affinity list: 0-79
+pid 56701's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56685's current affinity list: 0-79
+pid 56685's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56661's current affinity list: 0-79
+pid 56661's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+2022-07-29 15:38:20.780 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:38:20.780 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:38:20.780 pid 56594's current affinity list: 0-79
+pid 56594's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:38:20.780 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:38:20.780 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:38:20.780 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:38:20.780 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:38:20.783 INFO pid 56596's current affinity list: 0-79
+pid 56596's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2022-07-29 15:38:20.780 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:38:20.784 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:38:20.784 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+pid 56598's current affinity list: 0-79
+pid 56598's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+2022-07-29 15:38:20.785 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:38:20.785 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:38:20.786 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:38:20.786 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:38:20.787pid 56600's current affinity list: 0-79
+pid 56600's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+ INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:38:20.787 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:38:20.788 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:38:20.788 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:38:20.788 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+pid 56602's current affinity list: 0-79
+pid 56602's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56604's current affinity list: 0-79
+pid 56604's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56606's current affinity list: 0-79
+pid 56606's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56608's current affinity list: 0-79
+pid 56608's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56611's current affinity list: 0-79
+pid 56611's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56612's current affinity list: 0-79
+pid 56612's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56614's current affinity list: 0-79
+pid 56614's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56615's current affinity list: 0-79
+pid 56615's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56617's current affinity list: 0-79
+pid 56617's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56618's current affinity list: 0-79
+pid 56618's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56619's current affinity list: 0-79
+pid 56619's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56620's current affinity list: 0-79
+pid 56620's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56621's current affinity list: 0-79
+pid 56621's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56622's current affinity list: 0-79
+pid 56622's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56623's current affinity list: 0-79
+pid 56623's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56624's current affinity list: 0-79
+pid 56624's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56625's current affinity list: 0-79
+pid 56625's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56626's current affinity list: 0-79
+pid 56626's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56627's current affinity list: 0-79
+pid 56627's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56628's current affinity list: 0-79
+pid 56628's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56629's current affinity list: 0-79
+pid 56629's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56630's current affinity list: 0-79
+pid 56630's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56631's current affinity list: 0-79
+pid 56631's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56632's current affinity list: 0-79
+pid 56632's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56633's current affinity list: 0-79
+pid 56633's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56634's current affinity list: 0-79
+pid 56634's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56635's current affinity list: 0-79
+pid 56635's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56636's current affinity list: 0-79
+pid 56636's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56637's current affinity list: 0-79
+pid 56637's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56638's current affinity list: 0-79
+pid 56638's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56639's current affinity list: 0-79
+pid 56639's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56640's current affinity list: 0-79
+pid 56640's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56641's current affinity list: 0-79
+pid 56641's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56642's current affinity list: 0-79
+pid 56642's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56643's current affinity list: 0-79
+pid 56643's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56644's current affinity list: 0-79
+pid 56644's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56645's current affinity list: 0-79
+pid 56645's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56646's current affinity list: 0-79
+pid 56646's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56647's current affinity list: 0-79
+pid 56647's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56648's current affinity list: 0-79
+pid 56648's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56649's current affinity list: 0-79
+pid 56649's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56650's current affinity list: 0-79
+pid 56650's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56651's current affinity list: 0-79
+pid 56651's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56652's current affinity list: 0-79
+pid 56652's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56653's current affinity list: 0-79
+pid 56653's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56654's current affinity list: 0-79
+pid 56654's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56655's current affinity list: 0-79
+pid 56655's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56656's current affinity list: 0-79
+pid 56656's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 56657's current affinity list: 0-79
+pid 56657's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+2022-07-29 15:38:30:663 10 sec: 1689996 operations; 168999.6 current ops/sec; est completion in 50 seconds [INSERT: Count=1690170, Max=61535, Min=41, Avg=113.71, 90=123, 99=646, 99.9=1182, 99.99=7511] 
+2022-07-29 15:38:40:664 20 sec: 3292252 operations; 160225.6 current ops/sec; est completion in 41 seconds [INSERT: Count=1602310, Max=10687, Min=40, Avg=121.82, 90=156, 99=704, 99.9=1354, 99.99=5207] 
+2022-07-29 15:38:50:664 30 sec: 5156364 operations; 186411.2 current ops/sec; est completion in 29 seconds [INSERT: Count=1863974, Max=7383, Min=43, Avg=104.84, 90=112, 99=631, 99.9=984, 99.99=4875] 
+2022-07-29 15:39:00:663 40 sec: 7029023 operations; 187265.9 current ops/sec; est completion in 17 seconds [INSERT: Count=1872766, Max=33791, Min=40, Avg=104.38, 90=110, 99=607, 99.9=1112, 99.99=5531] 
+2022-07-29 15:39:10:663 50 sec: 8961155 operations; 193213.2 current ops/sec; est completion in 6 second [INSERT: Count=1931991, Max=39391, Min=41, Avg=101.16, 90=103, 99=629, 99.9=1065, 99.99=5491] 
+2022-07-29 15:39:14.465 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:39:15.507 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:39:15.534 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:39:15.608 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:39:15.645 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:39:15.727 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:39:15.794 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:39:15.873 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:39:15.885 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:39:16.008 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:39:16.076 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:39:16.140 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:39:16.159 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:39:16.172 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:39:16.262 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:39:16.311 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:39:16.356 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:39:16.383 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:39:16.580 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:39:16.725 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:39:16:726 56 sec: 10000000 operations; 171370.01 current ops/sec; [CLEANUP: Count=20, Max=10535, Min=503, Avg=1179.2, 90=859, 99=10535, 99.9=10535, 99.99=10535] [INSERT: Count=1038789, Max=9695, Min=43, Avg=99.51, 90=106, 99=605, 99.9=1093, 99.99=4971] 
+[OVERALL], RunTime(ms), 56071
+[OVERALL], Throughput(ops/sec), 178345.312193469
+[TOTAL_GCS_PS_Scavenge], Count, 63
+[TOTAL_GC_TIME_PS_Scavenge], Time(ms), 489
+[TOTAL_GC_TIME_%_PS_Scavenge], Time(%), 0.8721085766260633
+[TOTAL_GCS_PS_MarkSweep], Count, 0
+[TOTAL_GC_TIME_PS_MarkSweep], Time(ms), 0
+[TOTAL_GC_TIME_%_PS_MarkSweep], Time(%), 0.0
+[TOTAL_GCs], Count, 63
+[TOTAL_GC_TIME], Time(ms), 489
+[TOTAL_GC_TIME_%], Time(%), 0.8721085766260633
+[CLEANUP], Operations, 20
+[CLEANUP], AverageLatency(us), 1179.2
+[CLEANUP], MinLatency(us), 503
+[CLEANUP], MaxLatency(us), 10535
+[CLEANUP], 95thPercentileLatency(us), 1028
+[CLEANUP], 99thPercentileLatency(us), 10535
+[INSERT], Operations, 10000000
+[INSERT], AverageLatency(us), 107.709107
+[INSERT], MinLatency(us), 40
+[INSERT], MaxLatency(us), 61535
+[INSERT], 95thPercentileLatency(us), 204
+[INSERT], 99thPercentileLatency(us), 638
+[INSERT], Return=OK, 10000000
+## client cnt: 24
+# load data:
+[WARN]  Running against a source checkout. In order to get our runtime dependencies we'll have to invoke Maven. Depending on the state of your system, this may take ~30-45 seconds
+[DEBUG]  Running 'mvn -pl site.ycsb:memcached-binding -am package -DskipTests dependency:build-classpath -DincludeScope=compile -Dmdep.outputFilterFile=true'
+java -cp /u/hwen5/workspace/YCSB/memcached/conf:/u/hwen5/workspace/YCSB/memcached/target/memcached-binding-0.18.0-SNAPSHOT.jar:/u/hwen5/.m2/repository/org/apache/htrace/htrace-core4/4.1.0-incubating/htrace-core4-4.1.0-incubating.jar:/u/hwen5/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.4/HdrHistogram-2.1.4.jar:/u/hwen5/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/u/hwen5/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar:/u/hwen5/.m2/repository/net/spy/spymemcached/2.11.4/spymemcached-2.11.4.jar:/u/hwen5/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.4/jackson-core-asl-1.9.4.jar:/localdisk/hwen5/workspace/YCSB/core/target/core-0.18.0-SNAPSHOT.jar site.ycsb.Client -db site.ycsb.db.MemcachedClient -s -P /u/hwen5/workspace/YCSB/workloads/workloada -p fieldcount=10 -p fieldlength=100 -p memcached.hosts=127.0.0.1 -p recordcount=10000000 -p threadcount=24 -load
+Command line: -db site.ycsb.db.MemcachedClient -s -P /u/hwen5/workspace/YCSB/workloads/workloada -p fieldcount=10 -p fieldlength=100 -p memcached.hosts=127.0.0.1 -p recordcount=10000000 -p threadcount=24 -load
+YCSB Client 0.18.0-SNAPSHOT
+
+Loading workload...
+log4j:WARN No appenders could be found for logger (org.apache.htrace.core.Tracer).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Starting test.
+2022-07-29 15:39:31:589 0 sec: 0 operations; est completion in 0 second 
+['57446', '57424', '57386', '57383', '57324', '57326', '57328', '57330', '57331', '57332', '57333', '57334', '57335', '57336', '57337', '57338', '57339', '57340', '57341', '57342', '57343', '57344', '57345', '57346', '57347', '57348', '57349', '57350', '57351', '57352', '57353', '57354', '57355', '57356', '57357', '57358', '57359', '57360', '57361', '57362', '57363', '57364', '57365', '57366', '57367', '57368', '57369', '57370', '57371', '57372', '57373', '57374', '57375', '57376', '57377', '57378', '57379']
+pid 57446's current affinity list: 0-79
+pid 57446's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57424's current affinity list: 0-79
+pid 57424's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57386's current affinity list: 0-79
+pid 57386's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57383's current affinity list: 0-79
+pid 57383's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57324's current affinity list: 0-79
+pid 57324's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57326's current affinity list: 0-79
+pid 57326's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57328's current affinity list: 0-79
+pid 57328's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57330's current affinity list: 0-79
+pid 57330's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57331's current affinity list: 0-79
+pid 57331's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+2022-07-29 15:39:31.709 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:39:31.709 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:39:31.709 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:39:31.709 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+pid 57332's current affinity list: 0-79
+pid 57332's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+2022-07-29 15:39:31.710 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2022-07-29 15:39:31.711 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:39:31.712 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:39:31.712 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:39:31.713 INFO net.spy.memcached.MemcachedConnection:  pid 57333's current affinity list: 0-79
+pid 57333's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:39:31.714 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:39:31.714 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:39:31.715 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+pid 57334's current affinity list: 0-79
+pid 57334's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+2022-07-29 15:39:31.716 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:39:31.716 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:39:31.717 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:39:31.717 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:39:31.718 INFO pid 57335's current affinity list: 0-79
+pid 57335's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:39:31.718 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:39:31.719 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:39:31.720 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:39:31.720 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+pid 57336's current affinity list: 0-79
+pid 57336's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+2022-07-29 15:39:31.720 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:39:31.721 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+2022-07-29 15:39:31.721 INFO net.spy.memcached.MemcachedConnection:  Added {QA sa=/127.0.0.1:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+pid 57337's current affinity list: 0-79
+pid 57337's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57338's current affinity list: 0-79
+pid 57338's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57339's current affinity list: 0-79
+pid 57339's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57340's current affinity list: 0-79
+pid 57340's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57341's current affinity list: 0-79
+pid 57341's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57342's current affinity list: 0-79
+pid 57342's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57343's current affinity list: 0-79
+pid 57343's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57344's current affinity list: 0-79
+pid 57344's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57345's current affinity list: 0-79
+pid 57345's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57346's current affinity list: 0-79
+pid 57346's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57347's current affinity list: 0-79
+pid 57347's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57348's current affinity list: 0-79
+pid 57348's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57349's current affinity list: 0-79
+pid 57349's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57350's current affinity list: 0-79
+pid 57350's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57351's current affinity list: 0-79
+pid 57351's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57352's current affinity list: 0-79
+pid 57352's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57353's current affinity list: 0-79
+pid 57353's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57354's current affinity list: 0-79
+pid 57354's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57355's current affinity list: 0-79
+pid 57355's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57356's current affinity list: 0-79
+pid 57356's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57357's current affinity list: 0-79
+pid 57357's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57358's current affinity list: 0-79
+pid 57358's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57359's current affinity list: 0-79
+pid 57359's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57360's current affinity list: 0-79
+pid 57360's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57361's current affinity list: 0-79
+pid 57361's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57362's current affinity list: 0-79
+pid 57362's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57363's current affinity list: 0-79
+pid 57363's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57364's current affinity list: 0-79
+pid 57364's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57365's current affinity list: 0-79
+pid 57365's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57366's current affinity list: 0-79
+pid 57366's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57367's current affinity list: 0-79
+pid 57367's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57368's current affinity list: 0-79
+pid 57368's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57369's current affinity list: 0-79
+pid 57369's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57370's current affinity list: 0-79
+pid 57370's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57371's current affinity list: 0-79
+pid 57371's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57372's current affinity list: 0-79
+pid 57372's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57373's current affinity list: 0-79
+pid 57373's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57374's current affinity list: 0-79
+pid 57374's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57375's current affinity list: 0-79
+pid 57375's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57376's current affinity list: 0-79
+pid 57376's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57377's current affinity list: 0-79
+pid 57377's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57378's current affinity list: 0-79
+pid 57378's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+pid 57379's current affinity list: 0-79
+pid 57379's new affinity list: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79
+2022-07-29 15:39:41:589 10 sec: 1703141 operations; 170314.1 current ops/sec; est completion in 49 seconds [INSERT: Count=1703296, Max=64703, Min=43, Avg=134.94, 90=181, 99=715, 99.9=1293, 99.99=7259] 
+2022-07-29 15:39:51:590 20 sec: 3444947 operations; 174180.6 current ops/sec; est completion in 39 seconds [INSERT: Count=1741832, Max=9663, Min=44, Avg=133.93, 90=184, 99=737, 99.9=1217, 99.99=5543] 
+2022-07-29 15:40:01:589 30 sec: 5497121 operations; 205217.4 current ops/sec; est completion in 25 seconds [INSERT: Count=2052223, Max=30239, Min=43, Avg=113.57, 90=123, 99=673, 99.9=1046, 99.99=5683] 
+2022-07-29 15:40:11:592 40 sec: 7645322 operations; 214798.62 current ops/sec; est completion in 13 seconds [INSERT: Count=2148341, Max=15983, Min=40, Avg=108.49, 90=113, 99=645, 99.9=1043, 99.99=5431] 
+2022-07-29 15:40:19.949 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:19.966 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:20.153 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:20.639 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:21.356 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:21:589 50 sec: 9817530 operations; 217242.52 current ops/sec; est completion in 1 second [CLEANUP: Count=5, Max=13935, Min=910, Avg=3583.2, 90=13935, 99=13935, 99.9=13935, 99.99=13935] [INSERT: Count=2172600, Max=18127, Min=39, Avg=104.65, 90=108, 99=628, 99.9=1000, 99.99=5387] 
+2022-07-29 15:40:21.745 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:21.822 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:21.850 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:22.146 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:22.179 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:22.243 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:22.301 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:22.423 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:22.427 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:22.536 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:22.562 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:22.621 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:22.710 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:22.781 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:22.793 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:22.802 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:22.948 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:22.979 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:23.115 INFO net.spy.memcached.MemcachedConnection:  Shut down memcached client
+2022-07-29 15:40:23:116 51 sec: 10000000 operations; 119495.74 current ops/sec; [CLEANUP: Count=19, Max=1065, Min=523, Avg=694.79, 90=792, 99=1065, 99.9=1065, 99.99=1065] [INSERT: Count=181708, Max=7351, Min=46, Avg=89.53, 90=92, 99=595, 99.9=892, 99.99=5467] 
+[OVERALL], RunTime(ms), 51527
+[OVERALL], Throughput(ops/sec), 194073.01026646225
+[TOTAL_GCS_PS_Scavenge], Count, 72
+[TOTAL_GC_TIME_PS_Scavenge], Time(ms), 430
+[TOTAL_GC_TIME_%_PS_Scavenge], Time(%), 0.8345139441457877
+[TOTAL_GCS_PS_MarkSweep], Count, 0
+[TOTAL_GC_TIME_PS_MarkSweep], Time(ms), 0
+[TOTAL_GC_TIME_%_PS_MarkSweep], Time(%), 0.0
+[TOTAL_GCs], Count, 72
+[TOTAL_GC_TIME], Time(ms), 430
+[TOTAL_GC_TIME_%], Time(%), 0.8345139441457877
+[CLEANUP], Operations, 24
+[CLEANUP], AverageLatency(us), 1296.5416666666667
+[CLEANUP], MinLatency(us), 523
+[CLEANUP], MaxLatency(us), 13935
+[CLEANUP], 95thPercentileLatency(us), 1065
+[CLEANUP], 99thPercentileLatency(us), 13935
+[INSERT], Operations, 10000000
+[INSERT], AverageLatency(us), 117.2871156
+[INSERT], MinLatency(us), 39
+[INSERT], MaxLatency(us), 64703
+[INSERT], 95thPercentileLatency(us), 265
+[INSERT], 99thPercentileLatency(us), 673
+[INSERT], Return=OK, 10000000
