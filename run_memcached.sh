@@ -148,47 +148,47 @@ prepare_montage_$CONNECTION
 start_memcached_session_$CONNECTION
 
 # throughput-client cnt tests:
-test_type=thru-cli
-mkdir -p $OUTPUT_DIR/$test_type
-for MEMCACHED_OPTION in ${MEMCACHED_OPTIONS[@]}; do
-    OUTPUT_FILE=$OUTPUT_DIR/$test_type/$MEMCACHED_OPTION.txt
-    prepare_memcached_$CONNECTION $MEMCACHED_OPTION
-    cd $YCSB_DIR
-    for WORKER_THREAD_CNT in ${WORKER_THREAD_CNTS[@]}; do
-        echo "#### worker thread cnt: $WORKER_THREAD_CNT" | tee -a $OUTPUT_FILE
-        for KV_OPTION in "${KV_OPTIONS[@]}"; do
-            echo "### KV option: $KV_OPTION" | tee -a $OUTPUT_FILE
-            for CLIENT_COUNT in ${CLIENT_COUNTS[@]}; do
-                options="$KV_OPTION -p $MEMCACHED_HOST -p recordcount=$RECORD_COUNT -p operationcount=$OP_COUNT -p threadcount=$CLIENT_COUNT"
-                start_memcached_$CONNECTION $WORKER_THREAD_CNT
-                sleep 5s
+# test_type=thru-cli
+# mkdir -p $OUTPUT_DIR/$test_type
+# for MEMCACHED_OPTION in ${MEMCACHED_OPTIONS[@]}; do
+#     OUTPUT_FILE=$OUTPUT_DIR/$test_type/$MEMCACHED_OPTION.txt
+#     prepare_memcached_$CONNECTION $MEMCACHED_OPTION
+#     cd $YCSB_DIR
+#     for WORKER_THREAD_CNT in ${WORKER_THREAD_CNTS[@]}; do
+#         echo "#### worker thread cnt: $WORKER_THREAD_CNT" | tee -a $OUTPUT_FILE
+#         for KV_OPTION in "${KV_OPTIONS[@]}"; do
+#             echo "### KV option: $KV_OPTION" | tee -a $OUTPUT_FILE
+#             for CLIENT_COUNT in ${CLIENT_COUNTS[@]}; do
+#                 options="$KV_OPTION -p $MEMCACHED_HOST -p recordcount=$RECORD_COUNT -p operationcount=$OP_COUNT -p threadcount=$CLIENT_COUNT"
+#                 start_memcached_$CONNECTION $WORKER_THREAD_CNT
+#                 sleep 5s
 
-                echo "## client cnt: $CLIENT_COUNT" | tee -a $OUTPUT_FILE
-                echo "# load data:" | tee -a $OUTPUT_FILE
-                $YCSB_DIR/bin/ycsb load memcached -s -P $YCSB_DIR/workloads/workloada $options 2>&1 | tee -a $OUTPUT_FILE
-                echo "# YCSB-A:" | tee -a $OUTPUT_FILE
-                $YCSB_DIR/bin/ycsb run memcached -s -P $YCSB_DIR/workloads/workloada $options 2>&1 | tee -a $OUTPUT_FILE
-                echo "# YCSB-B:" | tee -a $OUTPUT_FILE
-                $YCSB_DIR/bin/ycsb run memcached -s -P $YCSB_DIR/workloads/workloadb $options 2>&1 | tee -a $OUTPUT_FILE
-                echo "# 100Write:" | tee -a $OUTPUT_FILE
-                $YCSB_DIR/bin/ycsb run memcached -s -P $YCSB_DIR/workloads/workload_100write $options 2>&1 | tee -a $OUTPUT_FILE
-                echo "# 50insert,50delete:" | tee -a $OUTPUT_FILE
-                $YCSB_DIR/bin/ycsb run memcached -s -P $YCSB_DIR/workloads/workload_50insert50delete $options 2>&1 | tee -a $OUTPUT_FILE
+#                 echo "## client cnt: $CLIENT_COUNT" | tee -a $OUTPUT_FILE
+#                 echo "# load data:" | tee -a $OUTPUT_FILE
+#                 $YCSB_DIR/bin/ycsb load memcached -s -P $YCSB_DIR/workloads/workloada $options 2>&1 | tee -a $OUTPUT_FILE
+#                 echo "# YCSB-A:" | tee -a $OUTPUT_FILE
+#                 $YCSB_DIR/bin/ycsb run memcached -s -P $YCSB_DIR/workloads/workloada $options 2>&1 | tee -a $OUTPUT_FILE
+#                 echo "# YCSB-B:" | tee -a $OUTPUT_FILE
+#                 $YCSB_DIR/bin/ycsb run memcached -s -P $YCSB_DIR/workloads/workloadb $options 2>&1 | tee -a $OUTPUT_FILE
+#                 echo "# 100Write:" | tee -a $OUTPUT_FILE
+#                 $YCSB_DIR/bin/ycsb run memcached -s -P $YCSB_DIR/workloads/workload_100write $options 2>&1 | tee -a $OUTPUT_FILE
+#                 echo "# 50insert,50delete:" | tee -a $OUTPUT_FILE
+#                 $YCSB_DIR/bin/ycsb run memcached -s -P $YCSB_DIR/workloads/workload_50insert50delete $options 2>&1 | tee -a $OUTPUT_FILE
 
-                end_memcached_$CONNECTION
-                sleep 5s
-            done
-        done
-    done
-done
+#                 end_memcached_$CONNECTION
+#                 sleep 5s
+#             done
+#         done
+#     done
+# done
 
 # throughput-KV size tests:
 
 CLIENT_COUNT=16
 WORKER_THREAD_CNT=4
 KV_OPTIONS=(
-    "-p fieldcount=10 -p fieldlength=1 -p recordcount=1000000000 -p operationcount=2000000000"
-    "-p fieldcount=10 -p fieldlength=10 -p recordcount=100000000 -p operationcount=200000000"
+    "-p fieldcount=10 -p fieldlength=1 -p recordcount=10000000 -p operationcount=20000000"
+    "-p fieldcount=10 -p fieldlength=10 -p recordcount=10000000 -p operationcount=20000000"
     "-p fieldcount=10 -p fieldlength=100 -p recordcount=10000000 -p operationcount=20000000"
     "-p fieldcount=10 -p fieldlength=1000 -p recordcount=1000000 -p operationcount=2000000"
     "-p fieldcount=10 -p fieldlength=10000 -p recordcount=100000 -p operationcount=200000"
