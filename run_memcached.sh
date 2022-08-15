@@ -5,13 +5,17 @@
 CONNECTION=local
 
 # test dimentions:
+# MEMCACHED_OPTIONS=(
+#     "montage_kv_store"
+#     "montage_wt_cache"
+#     "montage_wt_cache_dl"
+#     "montage_wb_cache"
+#     "montage_nvm_payloads"
+#     "montage_dram_payloads"
+#     "master"
+# )
 MEMCACHED_OPTIONS=(
-    "montage_kv_store"
-    "montage_wt_cache"
-    "montage_wb_cache"
-    "montage_nvm_payloads"
-    "montage_dram_payloads"
-    "master"
+    "montage_wb_cache_buffered"
 )
 
 CLIENT_COUNTS=(4 8 12 16 20 24)
@@ -23,6 +27,8 @@ KV_OPTIONS=(
 WORKER_THREAD_CNTS=(4 16)
 RECORD_COUNT=10000000
 OP_COUNT=20000000
+# RECORD_COUNT=100000
+# OP_COUNT=200000
 
 # env options:
 MONTAGE_DIR=`realpath ../Montage`
@@ -39,6 +45,7 @@ MEMCACHED_HOST_remote="memcached.hosts=node2x20a"
 
 # common options:
 MEMCACHED_MEMORY_LIMIT=81920 # MB
+MEMCACHED_EXEC="memcached"
 
 # generated envs:
 YCSB_DIR=`pwd`
@@ -66,12 +73,12 @@ prepare_memcached_local () {
 start_memcached_local() {
     rm -rf $NVM_DIR/${USER}*
     echo "starting Memcached server"
-    # tmux send-keys -t memcached_session.0 "$MEMCACHED_DIR/memcached --memory-limit=$MEMCACHED_MEMORY_LIMIT -t $1 -v" Enter
+    tmux send-keys -t memcached_session.0 "$MEMCACHED_DIR/$MEMCACHED_EXEC --memory-limit=$MEMCACHED_MEMORY_LIMIT -t $1 -v" Enter
 
     # for debugging:
-    tmux send-keys -t memcached_session.0 "q" Enter
-    tmux send-keys -t memcached_session.0 "q" Enter
-    tmux send-keys -t memcached_session.0 "gdb -x $YCSB_DIR/gdbinit --args $MEMCACHED_DIR/memcached-debug --memory-limit=$MEMCACHED_MEMORY_LIMIT -t $1 -v" Enter
+    # tmux send-keys -t memcached_session.0 "q" Enter
+    # tmux send-keys -t memcached_session.0 "q" Enter
+    # tmux send-keys -t memcached_session.0 "gdb -x $YCSB_DIR/gdbinit --args $MEMCACHED_DIR/$MEMCACHED_EXEC --memory-limit=$MEMCACHED_MEMORY_LIMIT -t $1 -v" Enter
 }
 
 end_memcached_local() {
@@ -115,7 +122,7 @@ start_memcached_remote() {
     remote_execute "
         rm -rf $REMOTE_NVM_DIR/${USER}*;
         echo \"starting Memcached server\";
-        tmux send-keys -t memcached_session.0 \"$REMOTE_MEMCACHED_DIR/memcached --memory-limit=$MEMCACHED_MEMORY_LIMIT -t $1\" Enter;
+        tmux send-keys -t memcached_session.0 \"$REMOTE_MEMCACHED_DIR/$MEMCACHED_EXEC --memory-limit=$MEMCACHED_MEMORY_LIMIT -t $1\" Enter;
     "
 }
 
@@ -147,10 +154,9 @@ prepare_montage_$CONNECTION
 start_memcached_session_$CONNECTION
 
 # throughput-client cnt tests:
-test_type=thru-cli
-mkdir -p $OUTPUT_DIR/$test_type
+mkdir -p $OUTPUT_DIR
 for MEMCACHED_OPTION in ${MEMCACHED_OPTIONS[@]}; do
-    OUTPUT_FILE=$OUTPUT_DIR/$test_type/$MEMCACHED_OPTION.txt
+    OUTPUT_FILE=$OUTPUT_DIR/$MEMCACHED_OPTION.txt
     prepare_memcached_$CONNECTION $MEMCACHED_OPTION
     cd $YCSB_DIR
     for WORKER_THREAD_CNT in ${WORKER_THREAD_CNTS[@]}; do
@@ -180,61 +186,5 @@ for MEMCACHED_OPTION in ${MEMCACHED_OPTIONS[@]}; do
         done
     done
 done
-
-# throughput-KV size tests:
-
-# MEMCACHED_OPTIONS=(
-#     "montage_kv_store"
-#     "montage_wt_cache"
-#     "montage_wb_cache"
-#     "montage_nvm_payloads"
-#     "montage_dram_payloads"
-#     "master"
-# )
-
-# montage_nvm_payloads currently have bug (segfault) under the 4th KV_OPTION. Removing it from the script for now.
-# MEMCACHED_OPTIONS=(
-#     "montage_kv_store"
-#     "montage_wt_cache"
-#     "montage_wb_cache"
-#     "montage_dram_payloads"
-#     "master"
-# )
-# CLIENT_COUNT=16
-# WORKER_THREAD_CNT=4
-# KV_OPTIONS=(
-#     "-p fieldcount=10 -p fieldlength=1 -p recordcount=10000000 -p operationcount=20000000"
-#     "-p fieldcount=10 -p fieldlength=10 -p recordcount=10000000 -p operationcount=20000000"
-#     "-p fieldcount=10 -p fieldlength=100 -p recordcount=10000000 -p operationcount=20000000"
-#     "-p fieldcount=10 -p fieldlength=1000 -p recordcount=1000000 -p operationcount=2000000"
-#     "-p fieldcount=10 -p fieldlength=10000 -p recordcount=100000 -p operationcount=200000"
-# )
-
-# test_type=thru-kv
-# mkdir -p $OUTPUT_DIR/$test_type
-# for MEMCACHED_OPTION in ${MEMCACHED_OPTIONS[@]}; do
-#     OUTPUT_FILE=$OUTPUT_DIR/$test_type/$MEMCACHED_OPTION.txt
-#     prepare_memcached_$CONNECTION $MEMCACHED_OPTION
-#     cd $YCSB_DIR
-#     for KV_OPTION in "${KV_OPTIONS[@]}"; do
-#         options="$KV_OPTION -p $MEMCACHED_HOST -p threadcount=$CLIENT_COUNT"
-#         echo "### KV option: $KV_OPTION" | tee -a $OUTPUT_FILE
-#         start_memcached_$CONNECTION $WORKER_THREAD_CNT
-#         sleep 5s
-#         echo "# load data:" | tee -a $OUTPUT_FILE
-#         $YCSB_DIR/bin/ycsb load memcached -s -P $YCSB_DIR/workloads/workloada $options 2>&1 | tee -a $OUTPUT_FILE
-#         echo "# YCSB-A:" | tee -a $OUTPUT_FILE
-#         $YCSB_DIR/bin/ycsb run memcached -s -P $YCSB_DIR/workloads/workloada $options 2>&1 | tee -a $OUTPUT_FILE
-#         echo "# YCSB-B:" | tee -a $OUTPUT_FILE
-#         $YCSB_DIR/bin/ycsb run memcached -s -P $YCSB_DIR/workloads/workloadb $options 2>&1 | tee -a $OUTPUT_FILE
-#         echo "# 100Write:" | tee -a $OUTPUT_FILE
-#         $YCSB_DIR/bin/ycsb run memcached -s -P $YCSB_DIR/workloads/workload_100write $options 2>&1 | tee -a $OUTPUT_FILE
-#         echo "# 50insert,50delete:" | tee -a $OUTPUT_FILE
-#         $YCSB_DIR/bin/ycsb run memcached -s -P $YCSB_DIR/workloads/workload_50insert50delete $options 2>&1 | tee -a $OUTPUT_FILE
-
-#         end_memcached_$CONNECTION
-#         sleep 5s
-#     done
-# done
 
 end_memcached_session_$CONNECTION
